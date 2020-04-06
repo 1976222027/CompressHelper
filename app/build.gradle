@@ -1,0 +1,36 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 29
+    defaultConfig {
+        applicationId "com.nanchen.compressimage"
+        minSdkVersion 14
+        targetSdkVersion 29
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+    signingConfigs {//签名配置
+        release {//release&debug版签名配置
+            storeFile file('C://Users/mahongyin/.android/debug.keystore')//密钥文件路径
+            storePassword "android"//密钥文件密码
+            keyAlias "androiddebugkey"//key别名
+            keyPassword "android"//key密码
+        }
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            signingConfig signingConfigs.release
+
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+
+    implementation 'androidx.appcompat:appcompat:1.1.0'
+    implementation project(':compresshelper')
+}

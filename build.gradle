@@ -1,0 +1,38 @@
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+
+buildscript {
+    repositories {
+        jcenter()
+        google()
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:3.6.2'
+        classpath 'com.novoda:bintray-release:0.9.1'
+    }
+}
+
+allprojects {
+    repositories {
+        jcenter()
+        google()
+        maven {url 'https://dl.bintray.com/mhylib/maven'}
+    }
+    tasks.withType(Javadoc) {
+        options.addStringOption('Xdoclint:none', '-quiet')
+        options {
+            encoding "UTF-8"
+            charSet 'UTF-8'
+            links "http://docs.oracle.com/javase/8/docs/api"
+            failOnError false
+        }
+    }
+    //避免javadoc的检查，防止上传时报错
+    //   tasks.withType(Javadoc) {
+    //      options.addStringOption('Xdoclint:none', '-quiet')
+    //      options.addStringOption('encoding', 'UTF-8')
+    //  }
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}

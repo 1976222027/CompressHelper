@@ -1,0 +1,44 @@
+apply plugin: 'com.android.library'
+apply plugin: 'com.novoda.bintray-release'//jcent
+android {
+    compileSdkVersion 29
+
+    defaultConfig {
+        minSdkVersion 14
+        targetSdkVersion 29
+        versionCode 1
+        versionName "1.0.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    lintOptions {
+        //肩擦错也要继续
+        abortOnError false
+        checkReleaseBuilds false
+    }
+}
+//jcent
+publish {
+
+    repoName = 'maven'//maven仓库名
+    userOrg = 'mhylib'// 用户所在组织,好像是用户名
+    groupId = 'com.mhy.compress'// 包名
+    artifactId = 'ComPressHelper'// library项目的名字
+    publishVersion = '1.0.0'// 版本
+    desc = 'build Bitmap Compress'//不中文
+    website = "https://github.com/1976222027/CompressHelper"//你的开源地址，注意，一定要用GitHub地址
+}
+//Terminal:gradlew clean build bintrayUpload -PbintrayUser=这里填你的JCenter账号 -PbintrayKey=这里填你的APIKey -PdryRun=false
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+//    implementation 'androidx.appcompat:appcompat:1.1.0'
+    implementation 'androidx.exifinterface:exifinterface:1.3.0-alpha01'
+
+}
