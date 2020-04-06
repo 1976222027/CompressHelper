@@ -3,8 +3,8 @@
 
 主要通过尺寸压缩和质量压缩，以达到清晰度最优，该项目参考了 [https://github.com/zetbaitsu/Compressor](https://github.com/zetbaitsu/Compressor) 的部分代码，且在基础上修正了部分 bug
 
-
-
+本项目 [fork自](https://github.com/nanchen2251/CompressHelper)
+修改了//import android.media.ExifInterface;>import androidx.exifinterface.media.ExifInterface;
 ## 效果图<br>
 ![](111.png)
 
@@ -15,9 +15,7 @@
   1、支持压缩单张图片和多张图片<br>
 ## 使用方法
 #### 1、添加依赖<br>
-##### Step 1. Add it in your root build.gradle at the end of repositories:
-
-##### Step 2. Add the dependency
+##### Step 1. Add the dependency
 ```java
 dependencies {
 	   implementation 'com.mhy.compress:CompressHelper:1.0.0'
