@@ -3,10 +3,10 @@
 
 主要通过尺寸压缩和质量压缩，以达到清晰度最优，该项目参考了 [https://github.com/zetbaitsu/Compressor](https://github.com/zetbaitsu/Compressor) 的部分代码，且在基础上修正了部分 bug
 
-本项目 [fork自](https://github.com/nanchen2251/CompressHelper)
+本项目 [fork自https://github.com/nanchen2251/CompressHelper](https://github.com/nanchen2251/CompressHelper)
 修改了//import android.media.ExifInterface;>import androidx.exifinterface.media.ExifInterface;
 ## 效果图<br>
-![](111.png)
+![](/111.png)
 
 #### ⊙开源不易，希望给个 star 或者 fork 奖励
 #### ⊙交流群（拒绝无脑问）：544822966 <a target="_blank" href="//shang.qq.com/wpa/qunwpa?idkey=e6ad4af66393"><img border="0" src="http://pub.idqqimg.com/wpa/images/group.png" alt="Android神技侧漏交流群" title="Android"></a>( 点击图标即可加入 )<br>
